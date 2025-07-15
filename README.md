@@ -1,44 +1,33 @@
-This project explored **process mining** techniques, using the Celonis platform, to help **WoodCorp Inc.**, a fictional German wood manufacturing company, improve how they handle orders and deliveries. WoodCorp, which makes pellets and crates, often struggled to meet promised delivery dates, which hurt their reputation. Our main goal was to understand their **Order-to-Cash (O2C) process** better and find ways to make it more efficient. This project was designed to build a strong case for WoodCorp to consider investing in the Celonis platform.
-
-Here's how we approached it and what we found:
+This project used **process mining with the Celonis platform** to help **WoodCorp Inc.**, a fictional German wood manufacturer, improve its **Order-to-Cash (O2C) process**. WoodCorp faced challenges in **meeting promised delivery dates** and needed to understand its O2C process better. The goal was to build a business case for WoodCorp to consider investing in Celonis.
 
 ### **Our Approach**
-We analyzed real event data from WoodCorp’s system, specifically two main datasets:
-*   The **Activity Table (event log)**: This showed the sequence of events for each sales order, including when each activity happened. This helped us visualize the actual process flow.
-*   The **Case Table**: This contained details about each order, like delivery dates, product types, factories, customer markets, and order values. This was used to measure performance and understand different parts of the business.
+We analyzed real data from WoodCorp's ERP system, including activity sequences (event logs) and order details. We used Celonis features like:
+*   **Process Explorer** to visualize actual process flows.
+*   **Conformance Checker** to compare actual processes to the ideal "Happy Path".
+*   **OLAP Tables** for multi-dimensional analysis.
+*   **Action Flows** to demonstrate automation.
 
-We used several key features within the Celonis platform:
-*   **Process Explorer**: To visually map out the process steps as they actually happened and spot where things weren't working well.
-*   **Conformance Checker**: To compare the actual process against the "Happy Path" (the ideal way the process should run) and highlight any differences or problems.
-*   **OLAP Tables**: For looking at data from different angles, like by product type, factory, or customer.
-*   **Action Flows**: To demonstrate how the system could automatically send alerts or notifications, such as for late deliveries.
+### **Key Findings**
+Our analysis revealed significant issues in WoodCorp's O2C process:
+*   A major concern was that **40.59% of orders were outside tolerance limits**, indicating frequent delays and inefficiencies.
+*   Approximately **6,800 orders did not follow the ideal process**. These issues were often due to **changes in quantity, price, or delivery dates**.
+    *   **55% of these problematic cases didn't meet product delivery tolerance**, and **12% were delivered late**.
+*   **Almost all (98.8%) of these problems originated from just three factories: Aachen, Essen, and Crefeld**.
+*   The **'Crates' product type was involved in 57% of problematic cases**, despite being only 39% of total orders.
+*   The **potential financial impact from customers returning out-of-tolerance goods could be up to €2.8 million**.
+*   A **Process AI analysis** further confirmed that **only 13% of all cases followed the ideal "happy path"**.
 
-### **What We Discovered (Key Findings)**
-Our analysis revealed some significant issues within WoodCorp's O2C process:
-*   **A big problem with missed deadlines**: **Over 40% of orders were outside acceptable tolerance limits**, meaning frequent delays or major inefficiencies.
-*   **Many orders didn't follow the plan**: About **6,800 cases didn't follow the ideal process**. These issues were often due to **changes in quantity (4,641 cases), price (3,903 cases), or delivery date (3,701 cases)**.
-    *   Out of these problematic cases, **55% didn't meet the expected product delivery tolerance**, and **12% were delivered after the promised date**.
-*   **Problems were concentrated**: **Almost all (98.8%) of the issues came from just three factories: Aachen, Essen, and Crefeld**.
-    *   **Aachen** was the biggest factory for deliveries, but also had the **widest range of tolerance issues**.
-*   **'Crates' were a major concern**: The **'Crates' product type was involved in 57% of problematic cases**, even though it only made up 39% of all orders. This product consistently showed higher volumes and more tolerance problems.
-*   **Specific customer segments and activities caused issues**:
-    *   The **Construction market segment** contributed to **16% of non-conformances**.
-    *   Frequent **changes to order quantity, price, and delivery dates** were major reasons for deviations, often leading to financial losses and delays.
-    *   Certain customers (like Kirchner, Fritz, Wiegand, Jurgens, Steinbach, Meibner, and Adam KG) were linked to a large number of these problems.
-*   **Financial impact**: These process issues could lead to a **potential financial loss of up to €2.8 million** if customers returned excess goods.
-*   **Late deliveries were common**: **12% of problematic cases resulted in late deliveries**, with an average delay of **9 days**.
-*   **Process AI confirmed findings**: An additional analysis using Artificial Intelligence validated our findings, showing that **only 13% of all cases actually followed the ideal "happy path"**.
+### **Solutions & Proposed Value**
+We developed dashboards and automated actions to provide tangible business value:
+*   **Dashboards** offered comprehensive views of sales orders and delivery performance.
+*   Two **Action Flows** were designed to showcase automation:
+    *   One automatically sends **summary reports for invoiced sales orders**.
+    *   Another acts as a **"High Risk Order Alert"**, notifying teams about orders from problematic factories, 'Crates' product type, Construction market, or those with quantity, price, or delivery date changes.
 
-### **Our Solutions & Proposed Value**
-We developed interactive dashboards and showed how automated actions could bring value to WoodCorp:
-*   **Dashboards**: Provided clear overviews of sales orders and delivery performance, showing key numbers, market trends, and performance by country.
-*   **Process Overview & Happy Path**: We mapped out the complete O2C process, highlighting the most common and ideal sequence of steps for all orders.
-*   **Automated Action Flows**: We designed two examples to show how automation could help:
-    *   One automatically sends a **summary report for sales orders that have already been invoiced** to the right teams.
-    *   Another acts as a **"High Risk Order Alert"**, notifying teams about orders that are likely to cause problems (e.g., from the problematic factories, 'Crates' product type, Construction market, or orders with changes to quantity, price, or delivery date).
+These solutions aim to **improve coordination, ensure traceability, automate reporting, encourage early intervention for unstable orders, and reduce operational risk and customer complaints** for WoodCorp Inc..
 
-These solutions aim to **improve coordination, ensure orders can be tracked, automate routine reports, allow for early intervention in unstable orders, and ultimately reduce risks and customer complaints** for WoodCorp. This project successfully demonstrated how **process mining can help optimize real-world processes, identify key deviations, and provide useful insights for better performance**.
-
+### **Conclusion**
+This project effectively showed the power of process mining in **optimizing real-world processes** and **generating actionable insights** for WoodCorp. While the analysis was based on historical data, it highlighted clear areas for improvement and laid the groundwork for future, more detailed investigations into root causes and the impact of specific activities like "Change production start date".
 ### **Next Steps**
 While our analysis was comprehensive, it was based on past data, which might not capture every real-time factor. For the future, we suggest:
 *   A more detailed look into the root causes of problems at the **Aachen, Essen, and Crefeld plants**.
